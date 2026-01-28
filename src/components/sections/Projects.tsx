@@ -73,7 +73,7 @@ const ProjectsSection = () => {
 
                                 <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-full group-hover:translate-y-0 transition-transform duration-700 ease-out">
                                     <div className="flex flex-wrap gap-2 mb-4">
-                                        {JSON.parse(project.techStack).map((tech: string, i: number) => (
+                                        {project.techStack.map((tech: string, i: number) => (
                                             <span key={i} className="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-white border border-white/10">
                                                 {tech}
                                             </span>
