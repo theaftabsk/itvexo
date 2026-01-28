@@ -11,7 +11,7 @@
   "dependencies": {
     "@react-three/drei": "^9.102.6",
     "@react-three/fiber": "^8.16.1",
-    "maath": "^2.3.1",
+    "maath": "0.10.8",
     "clsx": "^2.1.1",
     "framer-motion": "^11.0.14",
     "jose": "^6.1.3",
