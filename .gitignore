@@ -1,5 +1,16 @@
-node_modules
-# Keep environment variables out of version control
-.env
+# Next.js
+.next/
+out/
 
-/src/generated/prisma
+# Node
+node_modules/
+
+# Env
+.env
+.env.local
+
+# Prisma
+dev.db
+
+# OS / Downloads
+*.crdownload
