@@ -1,4 +1,5 @@
 import Scene from "@/components/canvas/Scene";
+// Triggering fresh static build
 import Navbar from "@/components/ui/Navbar";
 import HeroSection from "@/components/sections/Hero";
 import AboutSection from "@/components/sections/About";
