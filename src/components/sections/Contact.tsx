@@ -5,80 +5,58 @@ import { Mail, MessageSquare, Send } from "lucide-react";
 
 const ContactSection = () => {
     return (
-        <section id="contact" className="py-40 px-6 relative bg-mesh overflow-hidden">
-            <div className="max-w-7xl mx-auto relative z-10">
-                <div className="glass p-12 md:p-24 rounded-[4rem] relative overflow-hidden neon-border">
-                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-
-                    <div className="grid lg:grid-cols-2 gap-20 relative z-10">
+        <section id="contact" className="py-40 px-6 relative">
+            <div className="max-w-7xl mx-auto">
+                <div className="next-card p-12 md:p-24 relative overflow-hidden">
+                    <div className="grid lg:grid-cols-2 gap-20">
                         <div className="space-y-12">
                             <div className="space-y-6">
-                                <motion.h2
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    className="text-6xl md:text-[8rem] font-black text-black dark:text-white leading-tight tracking-tighter uppercase italic"
-                                >
-                                    Start a <br /><span className="text-gradient hover:tracking-widest transition-all duration-1000">Dynasty</span>
-                                </motion.h2>
-                                <p className="text-slate-500 dark:text-slate-400 text-xl font-light leading-relaxed max-w-md tracking-widest uppercase italic border-l-2 border-indigo-500 pl-6 mt-8">
-                                    Ready to build the future? Connect with <span className="text-indigo-500 font-black">Aftab SK</span> today.
+                                <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
+                                    Let's <span className="text-gradient">Connect</span>
+                                </h2>
+                                <p className="text-slate-500 text-lg md:text-xl font-medium leading-relaxed max-w-md">
+                                    Ready to bring your vision to life? I'm currently available for elite engineering projects.
                                 </p>
                             </div>
 
-                            <div className="space-y-10">
-                                <a href="mailto:aftab@itvexo.com" className="group flex items-center gap-8">
-                                    <div className="p-6 bg-indigo-500/5 dark:bg-white/5 rounded-3xl border border-indigo-500/10 group-hover:bg-indigo-600 transition-all duration-700 shadow-xl group-hover:shadow-indigo-500/20">
-                                        <Mail size={32} className="text-indigo-500 group-hover:text-white transition-colors" />
+                            <div className="space-y-8">
+                                <a href="mailto:aftab@itvexo.com" className="flex items-center gap-6 group">
+                                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                        <Mail size={24} />
                                     </div>
-                                    <div>
-                                        <p className="text-[10px] text-slate-500 uppercase font-black tracking-[0.4em] mb-2 font-inter">Direct Line</p>
-                                        <p className="text-2xl font-black text-black dark:text-white tracking-tight font-outfit">aftab@itvexo.com</p>
-                                    </div>
+                                    <span className="text-xl font-bold">aftab@itvexo.com</span>
                                 </a>
-
-                                <a href="tel:+919732351545" target="_blank" className="group flex items-center gap-8">
-                                    <div className="p-6 bg-cyan-500/5 dark:bg-white/5 rounded-3xl border border-cyan-500/10 group-hover:bg-cyan-500 transition-all duration-700 shadow-xl group-hover:shadow-cyan-500/20">
-                                        <MessageSquare size={32} className="text-cyan-500 group-hover:text-white transition-colors" />
+                                <a href="tel:+919732351545" className="flex items-center gap-6 group">
+                                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
+                                        <MessageSquare size={24} />
                                     </div>
-                                    <div>
-                                        <p className="text-[10px] text-slate-500 uppercase font-black tracking-[0.4em] mb-2 font-inter">Instant Connect</p>
-                                        <p className="text-2xl font-black text-black dark:text-white tracking-tight font-outfit">+91-9732351545</p>
-                                    </div>
+                                    <span className="text-xl font-bold">+91 97323 51545</span>
                                 </a>
                             </div>
                         </div>
 
-                        <form className="space-y-10 glass p-12 rounded-[3.5rem] border border-black/5 dark:border-white/5 shadow-2xl relative group">
-                            <div className="space-y-4">
-                                <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] ml-2 font-inter">Identity</label>
-                                <input type="text" className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-3xl px-10 py-6 focus:outline-none focus:border-indigo-500/50 focus:bg-white dark:focus:bg-black/20 transition-all text-black dark:text-white placeholder:text-slate-400 font-bold tracking-tight font-outfit" placeholder="Your Name" />
+                        <form className="space-y-6">
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <input type="text" placeholder="Name" className="w-full bg-slate-100 dark:bg-white/5 border border-transparent focus:border-blue-500 rounded-2xl px-6 py-4 outline-none transition-all font-semibold" />
+                                <input type="email" placeholder="Email" className="w-full bg-slate-100 dark:bg-white/5 border border-transparent focus:border-blue-500 rounded-2xl px-6 py-4 outline-none transition-all font-semibold" />
                             </div>
-                            <div className="space-y-4">
-                                <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] ml-2 font-inter">Email Coordinates</label>
-                                <input type="email" className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-3xl px-10 py-6 focus:outline-none focus:border-indigo-500/50 focus:bg-white dark:focus:bg-black/20 transition-all text-black dark:text-white placeholder:text-slate-400 font-bold tracking-tight font-outfit" placeholder="your@email.com" />
-                            </div>
-                            <div className="space-y-4">
-                                <label className="text-[10px] font-black text-slate-500 uppercase tracking-[0.5em] ml-2 font-inter">Project Vision</label>
-                                <textarea rows={4} className="w-full bg-black/[0.02] dark:bg-white/[0.02] border border-black/5 dark:border-white/5 rounded-3xl px-10 py-6 focus:outline-none focus:border-indigo-500/50 focus:bg-white dark:focus:bg-black/20 transition-all text-black dark:text-white placeholder:text-slate-400 font-bold tracking-tight resize-none font-outfit" placeholder="Describe your vision..." />
-                            </div>
-                            <button className="w-full py-7 bg-indigo-600 hover:bg-indigo-500 text-white rounded-[2.5rem] font-black text-xs uppercase tracking-[0.5em] transition-all duration-700 flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(79,70,229,0.4)] hover:scale-105 active:scale-95 group font-inter">
-                                Dispatch Message
-                                <Send size={18} className="group-hover:translate-x-2 group-hover:-translate-y-2 transition-transform duration-700" />
+                            <textarea rows={4} placeholder="Your project vision..." className="w-full bg-slate-100 dark:bg-white/5 border border-transparent focus:border-blue-500 rounded-2xl px-6 py-4 outline-none transition-all font-semibold resize-none" />
+                            <button className="btn-premium w-full justify-center">
+                                Send Message <Send size={20} />
                             </button>
                         </form>
                     </div>
                 </div>
 
-                <footer className="mt-40 grid md:grid-cols-2 gap-10 items-center border-t border-black/5 dark:border-white/5 pt-12 opacity-60 hover:opacity-100 transition-opacity">
-                    <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-2xl flex items-center justify-center font-black text-white text-xl font-outfit shadow-lg">I</div>
-                        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-black dark:text-white font-inter">© 2026 <span className="font-black">ITVEXO</span> Ecosystem / Aftab SK</p>
+                <footer className="mt-40 border-t border-slate-200 dark:border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+                    <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/20">I</div>
+                        <span className="font-bold text-slate-500 uppercase tracking-widest text-xs">© 2026 ITVEXO / Aftab SK</span>
                     </div>
-                    <div className="flex md:justify-end gap-8 text-[10px] font-bold uppercase tracking-[0.3em] font-inter">
-                        <a href="#" className="text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">Privacy</a>
-                        <a href="#" className="text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">Terms</a>
-                        <a href="#" className="text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-colors">Security</a>
+                    <div className="flex gap-8 text-xs font-bold text-slate-400 uppercase tracking-widest">
+                        <a href="#" className="hover:text-blue-500 transition-colors">Twitter</a>
+                        <a href="#" className="hover:text-blue-500 transition-colors">LinkedIn</a>
+                        <a href="#" className="hover:text-blue-500 transition-colors">GitHub</a>
                     </div>
                 </footer>
             </div>

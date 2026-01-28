@@ -19,52 +19,43 @@ const Navbar = () => {
     return (
         <nav className="fixed top-6 w-full z-50 flex justify-center px-6">
             <motion.div
-                initial={{ y: -100, opacity: 0 }}
+                initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                className="glass px-10 py-5 rounded-[2rem] flex items-center justify-between w-full max-w-7xl relative overflow-hidden group"
+                transition={{ duration: 0.6 }}
+                className="glass px-8 py-3 rounded-full flex items-center justify-between w-full max-w-4xl shadow-xl border border-white/10"
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-transparent to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-
-                <div className="flex items-center gap-6 relative z-10 transition-all duration-700">
-                    <div className="flex flex-col">
-                        <span className="text-3xl font-black text-black dark:text-white tracking-[0.6em] uppercase leading-none hover:text-indigo-500 transition-colors cursor-default select-none font-outfit">
-                            ITVEXO
-                        </span>
-                        <div className="flex items-center gap-2 mt-2">
-                            <span className="h-[1px] w-5 bg-indigo-500/50" />
-                            <span className="text-[9px] text-slate-500 font-black uppercase tracking-[0.4em] opacity-80 group-hover:opacity-100 transition-opacity font-inter">
-                                Founded by <span className="text-indigo-500/50">Aftab SK</span>
-                            </span>
-                        </div>
+                <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/30">
+                        I
                     </div>
+                    <span className="text-xl font-bold tracking-tight text-foreground dark:text-white">
+                        ITVEXO
+                    </span>
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-10 relative z-10 bg-white/5 dark:bg-black/5 px-8 py-3 rounded-2xl border border-black/5 dark:border-white/5 backdrop-blur-md">
-                    {["Home", "About", "Skills", "Projects", "Contact"].map((item) => (
+                <div className="hidden md:flex items-center gap-1">
+                    {navLinks.map((link) => (
                         <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 hover:text-indigo-500 dark:hover:text-indigo-400 transition-all duration-300 relative group/link"
+                            key={link.name}
+                            href={link.href}
+                            className="px-4 py-2 text-sm font-medium text-slate-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors uppercase tracking-wider"
                         >
-                            {item}
-                            <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-indigo-500 transition-all duration-500 group-hover/link:w-full" />
+                            {link.name}
                         </a>
                     ))}
+                    <div className="ml-4 pl-4 border-l border-white/10 flex items-center gap-4">
+                        <ThemeToggle />
+                        <a href="https://github.com/theaftabsk" target="_blank" className="text-slate-500 hover:text-blue-500 transition-colors">
+                            <Github size={20} />
+                        </a>
+                    </div>
                 </div>
 
-                <div className="hidden md:flex items-center gap-6 relative z-10 border-l border-white/10 pl-12 ml-4">
+                <div className="md:hidden flex items-center gap-2">
                     <ThemeToggle />
-                    <div className="h-8 w-px bg-white/10 mx-2" />
-                    <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors"><Twitter size={18} /></a>
-                    <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors"><Linkedin size={18} /></a>
-                    <a href="#" className="text-slate-400 hover:text-blue-400 transition-colors"><Github size={18} /></a>
-                </div>
-
-                <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-blue-400 transition-colors p-2">
-                        {isOpen ? <X size={28} /> : <Menu size={28} />}
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-foreground p-2">
+                        {isOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
                 </div>
             </motion.div>
@@ -72,18 +63,17 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isOpen && (
                 <motion.div
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    className="fixed inset-x-6 top-32 glass rounded-3xl z-40 p-8 md:hidden border border-white/10 shadow-3xl"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="fixed inset-x-6 top-24 glass rounded-3xl z-40 p-6 md:hidden border border-white/10"
                 >
-                    <div className="flex flex-col gap-6 items-center">
+                    <div className="flex flex-col gap-4">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-lg font-bold text-white hover:text-blue-400 tracking-wider transition-colors"
+                                className="text-lg font-semibold text-center py-2 text-foreground hover:text-blue-500 transition-colors"
                             >
                                 {link.name}
                             </a>

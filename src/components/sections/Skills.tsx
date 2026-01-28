@@ -30,19 +30,15 @@ const SkillsSection = () => {
     if (loading) return null;
 
     return (
-        <section id="skills" className="py-40 px-6 relative bg-mesh">
-            <div className="max-w-7xl mx-auto space-y-24 relative z-10">
-                <div className="text-center space-y-6 max-w-3xl mx-auto">
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        className="text-blue-400 font-bold uppercase tracking-[0.3em] text-[10px]"
-                    >
-                        Expertise
-                    </motion.div>
-                    <h2 className="text-5xl md:text-8xl font-black tracking-tighter text-black dark:text-white">
-                        Technical <span className="text-gradient">Mastery</span>
+        <section id="skills" className="py-40 px-6 relative">
+            <div className="max-w-7xl mx-auto space-y-16">
+                <div className="text-center space-y-4">
+                    <h2 className="text-4xl md:text-7xl font-bold tracking-tight">
+                        Technical <span className="text-gradient">Stacks</span>
                     </h2>
+                    <p className="text-slate-500 max-w-2xl mx-auto text-lg">
+                        Expertise built on years of experience with modern web technologies.
+                    </p>
                 </div>
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -51,21 +47,22 @@ const SkillsSection = () => {
                             key={group.name}
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
-                            className="glass-card p-10 group relative"
+                            className="next-card p-10 group"
                         >
-                            <div className="p-6 bg-black/5 dark:bg-white/5 rounded-3xl border border-black/5 dark:border-white/10 mb-8 group-hover:bg-indigo-600 transition-all duration-700 shadow-xl group-hover:shadow-indigo-500/20">
+                            <div className="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center mb-8 border border-blue-500/20 shadow-lg shadow-blue-500/10">
                                 {(() => {
                                     const Icon = IconMap[group.icon as keyof typeof IconMap] || Layout;
-                                    return <Icon size={32} className="text-indigo-500 group-hover:text-white transition-colors" />;
+                                    return <Icon size={28} className="text-blue-600 transition-colors" />;
                                 })()}
                             </div>
 
-                            <h3 className="text-2xl font-black mb-6 text-black dark:text-white uppercase italic tracking-tighter group-hover:translate-x-2 transition-transform duration-700">{group.name}</h3>
+                            <h3 className="text-xl font-bold mb-6">{group.name}</h3>
 
                             <div className="flex flex-wrap gap-2">
                                 {group.items.map((item: string) => (
-                                    <span key={item} className="px-4 py-1.5 bg-black/5 dark:bg-white/5 backdrop-blur-md rounded-full text-[10px] font-black uppercase tracking-widest text-slate-500 dark:text-slate-400 border border-black/5 dark:border-white/5 group-hover:border-indigo-500/30 group-hover:text-indigo-500 transition-all duration-700">
+                                    <span key={item} className="px-3 py-1.5 bg-slate-100 dark:bg-white/5 rounded-xl text-[11px] font-semibold uppercase tracking-wider text-slate-600 dark:text-slate-400">
                                         {item}
                                     </span>
                                 ))}
